@@ -26,6 +26,7 @@ languageRouter
   })
 
 languageRouter
+  .use(requireAuth)
   .get('/', async (req, res, next) => {
     try {
       const words = await LanguageService.getLanguageWords(
