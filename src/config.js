@@ -9,5 +9,5 @@ module.exports = {
   TEST_DB_URL: process.env.TEST_DB_URL || "postgresql://dunder-mifflin@localhost/spaced-repetition-test",
   JWT_SECRET: process.env.JWT_SECRET || 'change-this-secret',
   JWT_EXPIRY: process.env.JWT_EXPIRY || '3h',
-  API_TOKEN: process.env.API_TOKEN
+  API_TOKEN: process.env.API_TOKEN || 'token'
 }
