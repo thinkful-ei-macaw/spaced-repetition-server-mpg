@@ -172,7 +172,7 @@ describe('User Endpoints', function () {
           name: 'test name',
         }
         const expectedList = {
-          name: 'German',
+          name: 'French',
           total_score: 0,
           words: [
             { original: 'trainieren', translation: 'practice' },
@@ -185,6 +185,7 @@ describe('User Endpoints', function () {
             { original: 'katze', translation: 'cat' },
           ]
         }
+
         return supertest(app)
           .post('/api/user')
           .send(newUser)
