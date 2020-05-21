@@ -117,6 +117,7 @@ languageRouter
         totalScore: ll.total_score,
         answer,
         isCorrect,
+        guess
       })
     } catch (error) {
       next(error)
