@@ -1,4 +1,6 @@
-# Spaced repetition Client!
+# Spaced Repetition Capstone!
+
+This is an amazing user- and mobile-friendly app for new language learners. It interactively engages a user to play with new words and efficiently helps memorize them very fast. It also tracks user answers feedback(correct counts, incorrect counts, total scores).
 
 [Client repo](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg)
 
@@ -6,17 +8,24 @@
 
 [Live](https://duolang.org/)
 
-# Screenshots
+Designed by [Glen](https://github.com/Nekotree) & [Muhiddin](https://github.com/muhiddinsgithub) & Patrick
 
-![Screenshot1](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg/blob/muhiddin/sc.png)
-![Screenshot2](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg/blob/muhiddin/sc1.png)
-![Screenshot3](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg/blob/muhiddin/sc2.png)
+### Stack
 
-Designed by Glen & Muhiddin & Patrick
+#### Front-end technologies
+React, React Context API, React Router, HTML, CSS, CSS Flexbox, JavaScript
 
+#### Server technologies
+Node, Express
 
-Used technologies:
+#### Data persistence
+PostgreSQL
 
-CSS, React, Express, Node, PostgreSQL, Linked List
+#### Testing environments
+Cypress, Mocha
+
+#### Hosting
+Client: now(zeit/vercel), godaddy.com(domain)
+Server/Database: heroku
 
 
