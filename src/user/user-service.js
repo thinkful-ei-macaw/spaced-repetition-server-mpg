@@ -62,9 +62,11 @@ const UserService = {
         ['hallo', 'hello', 3],
         ['haus', 'house', 4],
         ['entwickler', 'developer', 5],
-        ['ubersetzen', 'translate', 6],
+        ['essen', 'food', 6],
         ['tolle', 'amazing', 7],
         ['hund', 'dog', 8],
+        ['gut', 'good', 9],
+        ['buch', 'book', 10],
         ['katze', 'cat', null],
       ]
 
