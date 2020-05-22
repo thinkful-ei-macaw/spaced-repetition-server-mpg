@@ -14,8 +14,7 @@
     "deploy": "git push heroku master"
   },
   "keywords": [],
-  "author": "Tom `tomatao` HT <tomht@thinkful.com>",
-  "license": "MIT",
+  "author": "Alex",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
