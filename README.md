@@ -8,7 +8,7 @@ This is an amazing user- and mobile-friendly app for new language learners. It i
 
 [Live](https://duolang.org/)
 
-Designed by [Glen](https://github.com/Nekotree) & [Muhiddin](https://github.com/muhiddinsgithub) & Patrick
+Designed by [Glen](https://github.com/Nekotree) & [Muhiddin](https://github.com/muhiddinsgithub) & [Patrick](https://github.com/7eyedhero)
 
 ### Stack
 
