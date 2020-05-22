@@ -35,7 +35,7 @@ Node, Express
 #### Data persistence
 PostgreSQL
 
-### Testing environments
+#### Testing environments
 Cypress, Mocha
 
 #### Hosting
