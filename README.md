@@ -14,7 +14,7 @@ This is an amazing user- and mobile-friendly app for new language learners. It i
 ![Screenshot2](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg/blob/muhiddin/sc1.png)
 ![Screenshot3](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg/blob/muhiddin/sc2.png)
 
-Designed by Glen & Muhiddin & Patrick
+Designed by Glen & [Muhiddin](https://github.com/muhiddinsgithub) & Patrick
 
 
 Used technologies:
