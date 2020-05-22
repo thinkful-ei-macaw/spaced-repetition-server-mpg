@@ -24,8 +24,22 @@ This is an amazing user- and mobile-friendly app for new language learners. It i
 Designed by Glen & [Muhiddin](https://github.com/muhiddinsgithub) & Patrick
 
 
-Used technologies:
+### Stack
 
-CSS, React, Express, Node, PostgreSQL, Linked List
+#### Front-end technologies
+React, React Context API, React Router, HTML, CSS, CSS Flexbox, JavaScript
+
+#### Server technologies
+Node, Express
+
+#### Data persistence
+PostgreSQL
+
+### Testing environments
+Cypress, Mocha
+
+#### Hosting
+Client: now(zeit/vercel), godaddy.com(domain)
+Server/Database: heroku
 
 
