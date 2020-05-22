@@ -1,4 +1,6 @@
-# Spaced repetition Client!
+# Spaced Repetition Capstone!
+
+This is an amazing user- and mobile-friendly app for new language learners. It interactively engages a user to play with new words and efficiently helps memorize them very fast. It also tracks user answers feedback(correct counts, incorrect counts, total scores).
 
 [Client repo](https://github.com/thinkful-ei-macaw/spaced-repetition-client-mpg)
 
