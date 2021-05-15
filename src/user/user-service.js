@@ -4,7 +4,7 @@ const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*
 
 const UserService = {
   hasUserWithUserName(db, username) {
-    return db('user')
+    return db('users')
       .where({ username })
       .first()
       .then(user => !!user)
@@ -12,16 +12,16 @@ const UserService = {
   insertUser(db, newUser) {
     return db
       .insert(newUser)
-      .into('user')
+      .into('users')
       .returning('*')
       .then(([user]) => user)
   },
   validatePassword(password) {
     if (password.length < 8) {
-      return 'Password be longer than 8 characters'
+      return 'Password must be at least 8 characters long.'
     }
     if (password.length > 72) {
-      return 'Password be less than 72 characters'
+      return 'Password must be 72 or fewer characters.'
     }
     if (password.startsWith(' ') || password.endsWith(' ')) {
       return 'Password must not start or end with empty spaces'
@@ -44,7 +44,7 @@ const UserService = {
   populateUserWords(db, user_id) {
     return db.transaction(async trx => {
       const [languageId] = await trx
-        .into('language')
+        .into('languages')
         .insert([
           { name: 'German', user_id },
         ], ['id'])
@@ -53,7 +53,7 @@ const UserService = {
       // we need to know the current sequence number
       // so that we can set the `next` field of the linked language
       const seq = await db
-        .from('word_id_seq')
+        .from('words_id_seq')
         .select('last_value')
         .first()
 
@@ -71,7 +71,7 @@ const UserService = {
       ]
 
       const [languageHeadId] = await trx
-        .into('word')
+        .into('words')
         .insert(
           languageWords.map(([original, translation, nextInc]) => ({
             language_id: languageId.id,
@@ -84,7 +84,7 @@ const UserService = {
           ['id']
         )
 
-      await trx('language')
+      await trx('languages')
         .where('id', languageId.id)
         .update({
           head: languageHeadId.id,

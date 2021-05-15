@@ -22,7 +22,7 @@ describe('Auth Endpoints', function () {
   /**
    * @description Get token for login
    **/
-  describe(`POST /api/auth/token`, () => {
+  describe(`POST /api/auth/login`, () => {
     beforeEach('insert users', () =>
       helpers.seedUsers(
         db,
@@ -42,7 +42,7 @@ describe('Auth Endpoints', function () {
         delete loginAttemptBody[field]
 
         return supertest(app)
-          .post('/api/auth/token')
+          .post('/api/auth/login')
           .send(loginAttemptBody)
           .expect(400, {
             error: `Missing '${field}' in request body`,
@@ -53,7 +53,7 @@ describe('Auth Endpoints', function () {
     it(`responds 400 'invalid username or password' when bad username`, () => {
       const userInvalidUser = { username: 'user-not', password: 'existy' }
       return supertest(app)
-        .post('/api/auth/token')
+        .post('/api/auth/login')
         .send(userInvalidUser)
         .expect(400, { error: `Incorrect username or password` })
     })
@@ -61,7 +61,7 @@ describe('Auth Endpoints', function () {
     it(`responds 400 'invalid username or password' when bad password`, () => {
       const userInvalidPass = { username: testUser.username, password: 'incorrect' }
       return supertest(app)
-        .post('/api/auth/token')
+        .post('/api/auth/login')
         .send(userInvalidPass)
         .expect(400, { error: `Incorrect username or password` })
     })
@@ -81,7 +81,7 @@ describe('Auth Endpoints', function () {
         }
       )
       return supertest(app)
-        .post('/api/auth/token')
+        .post('/api/auth/login')
         .send(userValidCreds)
         .expect(200, {
           authToken: expectedToken,
@@ -92,7 +92,7 @@ describe('Auth Endpoints', function () {
   /**
    * @description Refresh token
    **/
-  describe(`PATCH /api/auth/token`, () => {
+  describe(`PATCH /api/auth/login`, () => {
     beforeEach('insert users', () =>
       helpers.seedUsers(
         db,
@@ -111,7 +111,7 @@ describe('Auth Endpoints', function () {
         }
       )
       return supertest(app)
-        .put('/api/auth/token')
+        .put('/api/auth/login')
         .set('Authorization', helpers.makeAuthHeader(testUser))
         .expect(200, {
           authToken: expectedToken,

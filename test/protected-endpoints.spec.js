@@ -45,8 +45,8 @@ describe('Protected Endpoints', function () {
       method: supertest(app).post,
     },
     {
-      name: 'PUT /api/auth/token',
-      path: '/api/auth/token',
+      name: 'PUT /api/auth/login',
+      path: '/api/auth/login',
       method: supertest(app).put,
     },
   ]

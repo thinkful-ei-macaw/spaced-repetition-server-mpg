@@ -3,54 +3,54 @@ const { LinkedList } = require('./linked-list')
 const LanguageService = {
   getUsersLanguage(db, user_id) {
     return db
-      .from('language')
+      .from('languages')
       .select(
-        'language.id',
-        'language.name',
-        'language.user_id',
-        'language.head',
-        'language.total_score',
+        'languages.id',
+        'languages.name',
+        'languages.user_id',
+        'languages.head',
+        'languages.total_score',
       )
-      .where('language.user_id', user_id)
+      .where('languages.user_id', user_id)
       .first()
   },
 
   getLanguageById(db, language_id) {
     return db
-      .from('language')
+      .from('languages')
       .select(
-        'language.id',
-        'language.name',
-        'language.user_id',
-        'language.head',
-        'language.total_score',
+        'languages.id',
+        'languages.name',
+        'languages.user_id',
+        'languages.head',
+        'languages.total_score',
       )
-      .where('language.id', language_id)
+      .where('languages.id', language_id)
       .first()
   },
 
   getLanguageHead(db, language_id) {
     return db
-      .from('word')
+      .from('words')
       .select(
-        'word.id',
-        'word.language_id',
-        'word.original',
-        'word.translation',
-        'word.next',
-        'word.memory_value',
-        'word.correct_count',
-        'word.incorrect_count',
-        'language.total_score',
+        'words.id',
+        'words.language_id',
+        'words.original',
+        'words.translation',
+        'words.next',
+        'words.memory_value',
+        'words.correct_count',
+        'words.incorrect_count',
+        'languages.total_score',
       )
-      .leftJoin('language', 'language.head', 'word.id')
-      .where('language.id', language_id)
+      .leftJoin('languages', 'languages.head', 'words.id')
+      .where('languages.id', language_id)
       .first()
   },
 
   getLanguageWords(db, language_id) {
     return db
-      .from('word')
+      .from('words')
       .select(
         'id',
         'language_id',
@@ -101,7 +101,7 @@ const LanguageService = {
   updateLinkedList(db, linkedLanguage) {
     return db.transaction(trx =>
       Promise.all([
-        db('language')
+        db('languages')
           .transacting(trx)
           .where('id', linkedLanguage.id)
           .update({
@@ -109,7 +109,7 @@ const LanguageService = {
             head: linkedLanguage.head.value.id,
           }),
         ...linkedLanguage.map(node =>
-          db('word')
+          db('words')
             .transacting(trx)
             .where('id', node.value.id)
             .update({
