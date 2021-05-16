@@ -1,5 +1,7 @@
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = require('../config');
 const config = require('../config');
 
 const AuthService = {
@@ -12,14 +14,14 @@ const AuthService = {
     return bcrypt.compare(password, hash);
   },
   createJwt(subject, payload) {
-    return jwt.sign(payload, config.JWT_SECRET, {
+    return jwt.sign(payload, JWT_SECRET, {
       subject,
       expiresIn: config.JWT_EXPIRY,
       algorithm: 'HS256',
     });
   },
   verifyJwt(token) {
-    return jwt.verify(token, config.JWT_SECRET, {
+    return jwt.verify(token, JWT_SECRET, {
       algorithms: ['HS256'],
     });
   },

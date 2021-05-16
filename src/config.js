@@ -6,5 +6,6 @@ module.exports = {
   TEST_DB_URL: process.env.TEST_DB_URL,
   JWT_SECRET: process.env.JWT_SECRET || 'dbe39ae4-0149-47da-9501-f85f920e2602',
   JWT_EXPIRY: process.env.JWT_EXPIRY || '3h',
+  CLIENT_ORIGIN: /^https:\/\/(www.)?duolang.org$/
 };
 
