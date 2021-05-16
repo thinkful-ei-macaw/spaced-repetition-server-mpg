@@ -16,9 +16,10 @@ app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
 app.use(cors());
 app.use(helmet());
 
+app.use('/api/users', userRouter);
 app.use('/api/auth/login', authRouter);
 app.use('/api/language', languageRouter);
-app.use('/api/users', userRouter);
+
 
 app.use(errorHandler);
 

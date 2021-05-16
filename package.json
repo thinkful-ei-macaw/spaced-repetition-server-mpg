@@ -14,6 +14,9 @@
     "deploy": "git push heroku master"
   },
   "keywords": [],
+  "engines": {
+    "node": "v16.1.0"
+  },
   "author": "Duolang",
   "dependencies": {
     "bcryptjs": "^2.4.3",
